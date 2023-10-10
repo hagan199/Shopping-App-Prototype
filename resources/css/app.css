@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .button {
+        background-color: #0842a6;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: 0.2s;
+    }
+}
+.container {
+    @apply mx-auto p-4 sm:px-0;
+}
