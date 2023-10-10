@@ -4,7 +4,7 @@
             <img
                 class="h-auto max-w-full rounded-lg"
                 :src="`/images/${product.image}`"
-                alt=""
+                :alt="product.image"
             />
         </router-link>
     </div>

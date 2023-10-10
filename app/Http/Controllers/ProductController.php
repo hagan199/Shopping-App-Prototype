@@ -1,7 +1,6 @@
 <?php
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -11,18 +10,24 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(Product::all());
+        $products = Product::all();
+        return  $products;
     }
 
-    public function show($id)
+    public function store(Request $request)
+{
+    // Handle product creation logic here
+}
+    public function show(Product $product)
     {
-        $product = Product::find($id);
-
-        if (!$product) {
-            return response()->json(['message' => 'Product not found'], Response::HTTP_NOT_FOUND);
-        }
-
-        return new ProductResource($product);
+        return response()->json(
+            [
+                "success" => true,
+                "message" => "Product found",
+                "data" => $product,
+            ],
+            Response::HTTP_OK
+        );
     }
 
 }

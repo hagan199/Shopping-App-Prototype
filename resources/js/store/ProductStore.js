@@ -3,52 +3,25 @@ import { defineStore } from "pinia";
 
 export const useProductStore = defineStore("Products", {
     state: () => ({
-        products: [
-            {
-                id: 1,
-                name: "Slipper",
-                brand: "Balanciaga",
-                price: 20,
-                image: "game.jpeg",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum odit quae ea maiores id reiciendis, quas minus dolore ipsa!",
-            },
-            {
-                id: 2,
-                name: "Slipper",
-                brand: "Balanciaga",
-                price: 20,
-                image: "image-4.jpg",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum odit quae ea maiores id reiciendis, quas minus dolore ipsa!",
-            },
-            {
-                id: 3,
-                name: "Slipper",
-                brand: "Balanciaga",
-                price: 20,
-                image: "image-4.jpg",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum odit quae ea maiores id reiciendis, quas minus dolore ipsa!",
-            },
-            {
-                id: 4,
-                name: "Slipper",
-                brand: "Balanciaga",
-                price: 20,
-                image: "game.jpeg",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum odit quae ea maiores id reiciendis, quas minus dolore ipsa!",
-            },
-            {
-                id: 5,
-                name: "Slipper",
-                brand: "Balanciaga",
-                price: 20,
-                image: "game.jpeg",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum odit quae ea maiores id reiciendis, quas minus dolore ipsa!",
-            },
-        ],
+        products: [],
+        product: {},
     }),
+    actions: {
+        async fetchProducts() {
+            try {
+                const response = await axios.get("products");
+                if (response) {
+                    this.products = response.data;
+                }
+            } catch (error) {}
+        },
+        async getProductDetails(id) {
+            try {
+                const response = await axios.get(`products/${id}`);
+                if (response) {
+                    this.product = response.data.data;
+                }
+            } catch (error) {}
+        },
+    },
 });

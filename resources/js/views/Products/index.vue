@@ -1,5 +1,5 @@
 <template>
-    <div class=" container grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="container grid grid-cols-2 gap-4">
         <ProductItem
             v-for="product in products"
             :key="product.id"
@@ -11,9 +11,13 @@
 <script setup>
 import ProductItem from "@/components/ProductItem.vue";
 import { useProductStore } from "@/store/ProductStore.js";
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 
 const productStore = useProductStore();
 
 const products = computed(() => productStore.products);
+
+onMounted(() => {
+    productStore.fetchProducts();
+});
 </script>

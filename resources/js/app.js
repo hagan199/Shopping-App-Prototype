@@ -12,6 +12,9 @@ import { createApp } from "vue";
 
 import "../css/app.css";
 
+window.axios = axios;
+window.axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready

@@ -10,18 +10,16 @@ const router = createRouter({
             path: "/",
             name: "home",
             redirect: "/products",
-            children: [
-                {
-                    path: "/products",
-                    name: "products",
-                    component: ProductList,
-                },
-                {
-                    path: "/product/:id/product-details",
-                    name: "productDetails",
-                    component: ProductDetails,
-                },
-            ],
+        },
+        {
+            path: "/products",
+            name: "products",
+            component: ProductList,
+        },
+        {
+            path: "/product/:id/product-details",
+            name: "productDetails",
+            component: ProductDetails,
         },
     ],
 });
