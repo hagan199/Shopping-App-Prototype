@@ -63,7 +63,7 @@ This is a prototype of a mobile shopping app built as a Single Page Application 
 
 ### Clone the repository from GitHub:
 
-     - git clone <repository-url>
+     - git clone [https://github.com/hagan199/Shopping-App-Prototype.git]
      
 
 
