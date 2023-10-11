@@ -65,8 +65,6 @@ This is a prototype of a mobile shopping app built as a Single Page Application 
 
      - git clone [https://github.com/hagan199/Shopping-App-Prototype.git]
      
-
-
 ### Configure your .env file with your database credentials and other settings.
 
 ###  Install the necessary dependencies:
@@ -95,10 +93,6 @@ This is a prototype of a mobile shopping app built as a Single Page Application 
 
 ### State Management
    - To efficiently manage application state, the Pinia Store for state management has been implemented. This store stores and provides access to product data in the SPA.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
