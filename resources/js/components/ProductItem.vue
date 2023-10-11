@@ -18,8 +18,8 @@ const props = defineProps({
     },
 });
 
-const addToCart = (product) => {
-    cartStore.addToCart(product);
-};
+// const addToCart = (product) => {
+//     cartStore.addToCart(product);
+// };
 </script>
 <style scoped></style>
